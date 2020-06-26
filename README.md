@@ -26,7 +26,7 @@ Containg helper functions used in the files above and test functions, these were
 ### Commands
 
 #### Training
-Training needs to be done on a strong GPU as follows:
+The model can be trained with the following command:
 
 It can also be trained in parallel on multiple GPUs as follows:
 
