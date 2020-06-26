@@ -33,7 +33,7 @@ python ./train.py --model_checkpoint=gpt2-medium --lm_coef=2.0 --max_history=2 -
 ```
 It can also be trained in parallel on multiple GPUs as follows:
 ```shell
-`python -m torch.distributed.launch --nproc_per_node=4 train.py --gradient_accumulation_steps=4 --model_checkpoint=gpt2-medium --lm_coef=2.0 --max_history=2 --n_epochs=1 --num_candidates=4 --personality_permutations=2 --train_batch_size=2 --valid_batch_size=2`
+python -m torch.distributed.launch --nproc_per_node=4 train.py --gradient_accumulation_steps=4 --model_checkpoint=gpt2-medium --lm_coef=2.0 --max_history=2 --n_epochs=1 --num_candidates=4 --personality_permutations=2 --train_batch_size=2 --valid_batch_size=2`
 ```
 The model files are usually stored in a 'runs' directory, containing the date, GPU node and model name of the run. \
 After training, validation is also applied to calculate the perplexity of the model. 
@@ -53,11 +53,11 @@ python ../convai_evaluation.py --eval_type f1 --model_checkpoint ../runs/Jun05_0
 #### Interact with the model
 To interact with a trained model file (could be either baseline or baseline + LSM loss integration), use the something following command: 
 ```shell
-`python interact.py --model gpt2 --top_k 40 --model_checkpoint runs/Jun21_14-31-17_r28n4.lisa.surfsara.nl_gpt2-medium`
+python interact.py --model gpt2 --top_k 40 --model_checkpoint runs/Jun21_14-31-17_r28n4.lisa.surfsara.nl_gpt2-medium`
 ```
 To interact with a trained model file including weighted decoding, use the following command:
 ```shell
-`python interact.py --model gpt2 --top_k 40 --model_checkpoint runs/Jun21_14-31-28_r33n6.lisa.surfsara.nl_gpt2-medium --wd true --wd_weight=2.5`
+python interact.py --model gpt2 --top_k 40 --model_checkpoint runs/Jun21_14-31-28_r33n6.lisa.surfsara.nl_gpt2-medium --wd true --wd_weight=2.5`
 ```
 
 If any problems occur when running the code, please send an email to: bartvanvulpen@icloud.com
