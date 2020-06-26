@@ -1,6 +1,4 @@
-# gpt2lsm
-Integration of LSM in GPT2 Model
-
+# Integrating a Language Style Matching Objective into Deep Neural Networks for Dialogue Response Generation
 
 ### Main files:
 
